@@ -127,3 +127,98 @@ label{
 }
 
 
+
+
+/* Large desktops */
+@media (min-width: 1681px) {
+  .Search{
+    width: 73%;
+  }
+}
+
+/* Medium desktops */
+@media (min-width: 1366px) and (max-width: 1680px) {
+  .Search{
+    width: 65%;
+  }
+}
+
+/* Small desktops and laptops */
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .Search{
+    width: 52%;
+    position: relative;
+    right: 4vw;
+  }
+
+  .Search input{
+    width: 180%;
+  }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .Search{
+    width: 40%;
+    position: relative;
+    left:3vw;
+  }
+
+  .Search input{
+    width: 100%;
+  }
+
+  .App{
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .Header{
+    flex-direction: column;
+  }
+
+  .Search input{
+    width: 80vw;
+  }
+
+  .navigation ul{
+    padding: 0;
+    
+  }
+
+  .App{
+    padding: 5px;
+  }
+
+  .Content{
+    align-items: center;
+    padding: 20px 10px;
+    max-height: 80vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Form{
+    display: flex;
+    background-color: white;
+    width: 90vw;
+    height: 80vh;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: absolute;
+  }
+  
+  .Form input, .Form textarea{
+    width: 80vw;
+  }
+
+  li{
+    text-align: left;
+    position: relative;
+    padding: 0;
+  }
+}
