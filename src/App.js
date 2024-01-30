@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navigation from './Navigation';
+import Home from './Home';
+import BlogForm from './BlogForm';
+import Search from './Search';
+import BlogList from './BlogList';
 
 function App() {
+  const [blogPosts, setBlogPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleAddPost = (newPost) => {
+    setBlogPosts((prevPosts) => [...prevPosts, newPost]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="Header">
+          <h1>Blog Site</h1>
+          <div className="Search">
+            <Search onSearch={setSearchTerm} />
+          </div>
+          <div className="navigation">
+            <Navigation />
+          </div>
+        </div>
+        <div className="Content">
+          {/* Define Routes */}
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/blog"
+              element={
+                <BlogForm onAddPost={handleAddPost} />
+              }
+            />
+          </Routes>
+
+          {/* Render the BlogList component and pass the blogPosts and searchTerm */}
+          <BlogList blogPosts={blogPosts} searchTerm={searchTerm} />
+        </div>
+      </div>
+    </Router>
   );
 }
 
