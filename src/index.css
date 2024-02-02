@@ -68,6 +68,18 @@
   
 }
 
+.Blog ul li{
+  margin-right: 50px;
+  padding: 30px 30px 10px 30px;
+  border-radius: 5px;
+  max-width: 300px;
+}
+
+.read{
+  margin-right: 20px;
+  margin-bottom: -10px;
+}
+
 .Form{
   display: flex;
   background-color: white;
@@ -93,6 +105,7 @@ input{
   font-family: 'Quicksand', sans-ser;
   font-weight: 500;
 }
+
 
 textarea{
   height: 150px;
@@ -164,6 +177,10 @@ label{
     left:3vw;
   }
 
+  .Blog{
+    width: 70vw;
+  }
+
   .Search input{
     width: 100%;
   }
@@ -180,6 +197,10 @@ label{
 
   .Search input{
     width: 80vw;
+  }
+
+  .Blog{
+    width: 90vw;
   }
 
   .navigation ul{

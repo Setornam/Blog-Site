@@ -41,7 +41,6 @@ function App() {
             />
           </Routes>
 
-          {/* Render the BlogList component and pass the blogPosts and searchTerm */}
           <BlogList blogPosts={blogPosts} searchTerm={searchTerm} />
         </div>
       </div>
